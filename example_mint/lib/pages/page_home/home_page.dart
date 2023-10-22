@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mint/mint.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -9,7 +10,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Mint Example'),
       ),
-      body: Center(
+      body: PageContent(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
