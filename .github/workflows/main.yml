@@ -3,12 +3,8 @@ name: Mint Main
 on:
   push:
     branches: [ "main" ]
-    paths:
-      - "!example_mint/**"
   pull_request:
     branches: [ "main" ]
-    paths:
-      - "!example_mint/**"
 
 jobs:
   build-mint:

@@ -5,5 +5,4 @@ linter:
     prefer_single_quotes: true
 
 analyzer:
-  exclude:
-    - example_mint/**.*
+  exclude: [example_mint/**]
