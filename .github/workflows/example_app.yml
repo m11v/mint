@@ -1,4 +1,4 @@
-name: Mint Main
+name: Example App Main
 
 on:
   push:
@@ -7,10 +7,10 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build-mint:
+  build-example-app:
     defaults:
       run:
-        working-directory: ./  
+        working-directory: ./example_mint
          
     runs-on: ubuntu-latest
 
