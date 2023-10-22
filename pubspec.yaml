@@ -1,6 +1,8 @@
 name: mint
-description: A new Flutter package project.
-version: 0.0.1
+description: Common views & Utils for MintMinter app
+version: 1.0.0
+homepage: https://github.com/m11v/mint
+repository: https://github.com/m11v/mint
 
 environment:
   sdk: '>=3.1.2 <4.0.0'
