@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mint/mint.dart';
+import 'package:mintminter_mint/mint.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

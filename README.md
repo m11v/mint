@@ -1,4 +1,4 @@
-# mint
+# mintminter_mint
 
 Common views & utils package for MintMinter app
 

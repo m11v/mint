@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  mint:
+  mintminter_mint:
     path: ../../mint
 
 dev_dependencies:
