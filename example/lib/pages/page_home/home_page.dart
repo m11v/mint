@@ -31,7 +31,7 @@ class HomePage extends StatelessWidget {
 }
 
 class _MintMinterAndroidAppsView extends StatelessWidget {
-  const _MintMinterAndroidAppsView({super.key});
+  const _MintMinterAndroidAppsView();
 
   @override
   Widget build(BuildContext context) {
