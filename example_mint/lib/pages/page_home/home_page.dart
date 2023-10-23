@@ -20,13 +20,15 @@ class HomePage extends StatelessWidget {
               'Example of mint package',
               style: Theme.of(context).textTheme.titleLarge,
             ),
-            const SizedBox(
-              height: 20,
-            ),
             AdBanner(
+              padding: const EdgeInsets.symmetric(vertical: 50),
               type:
                   const ExampleTopBannerAndroid(unitId: AdIdProvider.mockAdId),
               adIdProvider: ExampleAdProvider.getInstance(),
+            ),
+            Text(
+              'text1',
+              style: Theme.of(context).textTheme.titleLarge,
             ),
           ],
         ),

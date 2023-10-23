@@ -6,12 +6,14 @@ import 'ad.dart';
 class AdBanner extends StatefulWidget {
   const AdBanner({
     super.key,
+    required this.padding,
     required this.type,
     required this.adIdProvider,
   });
 
   final AdType type;
   final AdIdProvider adIdProvider;
+  final EdgeInsetsGeometry padding;
 
   @override
   State<AdBanner> createState() => _AdBannerState();
@@ -59,10 +61,13 @@ class _AdBannerState extends State<AdBanner> {
     if (_bannerAd != null) {
       return Align(
         alignment: Alignment.topCenter,
-        child: SizedBox(
-          width: _bannerAd!.size.width.toDouble(),
-          height: _bannerAd!.size.height.toDouble(),
-          child: AdWidget(ad: _bannerAd!),
+        child: Padding(
+          padding: widget.padding,
+          child: SizedBox(
+            width: _bannerAd!.size.width.toDouble(),
+            height: _bannerAd!.size.height.toDouble(),
+            child: AdWidget(ad: _bannerAd!),
+          ),
         ),
       );
     } else if (adId.isMockAdId) {
