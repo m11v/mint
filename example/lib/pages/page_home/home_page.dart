@@ -9,30 +9,53 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Mint Example'),
+        title: const Text('mintminter_mint Example'),
       ),
       body: PageContent(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(
-              'Example of mint package',
-              style: Theme.of(context).textTheme.titleLarge,
-            ),
             AdBanner(
-              padding: const EdgeInsets.symmetric(vertical: 50),
+              padding: const EdgeInsets.only(bottom: 20),
               type:
                   const ExampleTopBannerAndroid(unitId: AdIdProvider.mockAdId),
               adIdProvider: ExampleAdProvider.getInstance(),
             ),
-            Text(
-              'text1',
-              style: Theme.of(context).textTheme.titleLarge,
+            const _MintMinterAndroidAppsView(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _MintMinterAndroidAppsView extends StatelessWidget {
+  const _MintMinterAndroidAppsView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      child: Text.rich(
+        TextSpan(
+          children: [
+            const TextSpan(
+                text: 'MintMinter Android Apps',
+                style: TextStyle(decoration: TextDecoration.underline)),
+            WidgetSpan(
+              child: Icon(
+                Icons.open_in_new,
+                size: 14,
+                color: Theme.of(context).colorScheme.secondary,
+              ),
             ),
           ],
         ),
       ),
+      onTap: () {
+        launchInBrowser(
+            'https://play.google.com/store/apps/dev?id=6660530813735178327');
+      },
     );
   }
 }
