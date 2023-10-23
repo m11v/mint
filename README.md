@@ -9,9 +9,12 @@ Common views & utils package for MintMinter app
 
 ## Google mobile ads toolkit
  - AdBanner
- - AdType
  - AdIdProvider
+ - AdType
 
 ## Views
+ - AboutView
  - PageContent
 
+## Utils
+ - launchInBrowser

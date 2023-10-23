@@ -19,3 +19,6 @@
 
 ## 1.0.5
 * Add util: url_launcher
+
+## 1.0.6
+* Add `AboutView`
