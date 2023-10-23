@@ -1,13 +1,12 @@
 name: mintminter_mint
-description: Common views & Utils for MintMinter app
+description: A Flutter package - Common views, utils and extensions for MintMinter app
 homepage: https://github.com/m11v/mint
 repository: https://github.com/m11v/mint
 
-version: 1.0.1
+version: 1.0.2
 
 environment:
   sdk: '>=3.1.2 <4.0.0'
-  flutter: ">=1.17.0"
 
 dependencies:
   flutter:
