@@ -10,3 +10,6 @@
 
 ## 1.0.2
 * Add view and util for google mobile ads
+
+## 1.0.3
+* Add padding configuration to AdBanner
