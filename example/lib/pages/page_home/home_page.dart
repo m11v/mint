@@ -1,7 +1,6 @@
 import 'package:example_mint/ad/example_ad_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:mintminter_mint/mint.dart';
-import 'package:mintminter_mint/views/about_view.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
