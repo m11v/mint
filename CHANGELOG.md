@@ -13,3 +13,6 @@
 
 ## 1.0.3
 * Add padding configuration to AdBanner
+
+## 1.0.4
+* Add example app
