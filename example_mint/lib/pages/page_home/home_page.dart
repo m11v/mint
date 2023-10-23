@@ -1,3 +1,4 @@
+import 'package:example_mint/ad/example_ad_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:mintminter_mint/mint.dart';
 
@@ -18,6 +19,14 @@ class HomePage extends StatelessWidget {
             Text(
               'Example of mint package',
               style: Theme.of(context).textTheme.titleLarge,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            AdBanner(
+              type:
+                  const ExampleTopBannerAndroid(unitId: AdIdProvider.mockAdId),
+              adIdProvider: ExampleAdProvider.getInstance(),
             ),
           ],
         ),
