@@ -1,6 +1,7 @@
 import 'package:example_mint/ad/example_ad_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:mintminter_mint/mint.dart';
+import 'package:mintminter_mint/views/about_view.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -12,9 +13,7 @@ class HomePage extends StatelessWidget {
         title: const Text('mintminter_mint Example'),
       ),
       body: PageContent(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
           children: <Widget>[
             AdBanner(
               padding: const EdgeInsets.only(bottom: 20),
@@ -23,6 +22,12 @@ class HomePage extends StatelessWidget {
               adIdProvider: ExampleAdProvider.getInstance(),
             ),
             const _MintMinterAndroidAppsView(),
+            const AboutView(
+              logoAssetName: 'assets/images/mintminter.png',
+              appName: 'Example App',
+              version: 'version',
+              child: Text('This is foot view'),
+            )
           ],
         ),
       ),
