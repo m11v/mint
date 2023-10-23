@@ -22,3 +22,6 @@
 
 ## 1.0.6
 * Add `AboutView`
+
+## 1.0.7
+* Fix bugs
