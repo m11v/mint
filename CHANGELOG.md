@@ -16,3 +16,6 @@
 
 ## 1.0.4
 * Add example app
+
+## 1.0.5
+* Add util: url_launcher
