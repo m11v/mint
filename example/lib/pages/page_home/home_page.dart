@@ -22,12 +22,7 @@ class HomePage extends StatelessWidget {
               adIdProvider: ExampleAdProvider.getInstance(),
             ),
             const _MintMinterAndroidAppsView(),
-            const AboutView(
-              logoAssetName: 'assets/images/mintminter.png',
-              appName: 'Example App',
-              version: 'version',
-              child: Text('This is foot view'),
-            ),
+            const _TestAboutView(),
             const SizedBox(
               height: 40,
             ),
@@ -41,6 +36,28 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _TestAboutView extends StatelessWidget {
+  const _TestAboutView();
+
+  @override
+  Widget build(BuildContext context) {
+    return const AboutView(
+      logoAssetName: 'assets/images/mintminter.png',
+      appName: 'Example App',
+      version: 'version',
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          guanyinlingqian2023Tile,
+          Divider(),
+          huangdaxianTile,
+        ],
       ),
     );
   }
