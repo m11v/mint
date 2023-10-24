@@ -34,6 +34,9 @@ class HomePage extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
+            const MintButton(
+              text: 'Disabled Button',
+            ),
           ],
         ),
       ),
@@ -112,17 +115,16 @@ class _TestHiveViewState extends State<_TestHiveView> {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      child: Text('Value: $value'),
-      onTap: () {
-        final newValue = value + 1;
-        HiveBoxProvider.getInstance(boxName: appBoxName)
-            .put('test_hive', newValue);
-        setState(() {
-          value = newValue;
+    return MintButton(
+        text: 'Value: $value',
+        onPressed: () {
+          final newValue = value + 1;
+          HiveBoxProvider.getInstance(boxName: appBoxName)
+              .put('test_hive', newValue);
+          setState(() {
+            value = newValue;
+          });
         });
-      },
-    );
   }
 }
 
