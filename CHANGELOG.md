@@ -34,3 +34,6 @@
 
 ## 1.0.10
 * Add `AppTile`
+
+## 1.0.11
+* Add `MintButton`
