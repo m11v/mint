@@ -37,3 +37,6 @@
 
 ## 1.0.11
 * Add `MintButton`
+
+## 1.0.12
+* Fix a bug
