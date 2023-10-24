@@ -35,6 +35,10 @@ class HomePage extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
+            const _TestContentView(),
+            const SizedBox(
+              height: 40,
+            ),
           ],
         ),
       ),
@@ -102,5 +106,36 @@ class _TestHiveViewState extends State<_TestHiveView> {
         });
       },
     );
+  }
+}
+
+class _TestContentView extends StatefulWidget {
+  const _TestContentView();
+
+  @override
+  State<_TestContentView> createState() => _TestContentViewState();
+}
+
+class _TestContentViewState extends State<_TestContentView> {
+  String assetContent = '';
+
+  @override
+  Widget build(BuildContext context) {
+    if (assetContent.isEmpty) {
+      return InkWell(
+        child: const Text('Load Content...'),
+        onTap: () async {
+          final assetProvider = AssetProvider(
+              assetBundle: DefaultAssetBundle.of(context),
+              name: 'assets/content/example.json');
+          final content = await assetProvider.loadContent();
+          setState(() {
+            assetContent = content;
+          });
+        },
+      );
+    } else {
+      return Text(assetContent);
+    }
   }
 }
