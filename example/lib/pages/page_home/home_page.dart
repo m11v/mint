@@ -1,4 +1,5 @@
 import 'package:example_mint/ad/example_ad_provider.dart';
+import 'package:example_mint/main.dart';
 import 'package:flutter/material.dart';
 import 'package:mintminter_mint/mint.dart';
 
@@ -26,7 +27,14 @@ class HomePage extends StatelessWidget {
               appName: 'Example App',
               version: 'version',
               child: Text('This is foot view'),
-            )
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+            const _TestHiveView(),
+            const SizedBox(
+              height: 40,
+            ),
           ],
         ),
       ),
@@ -59,6 +67,39 @@ class _MintMinterAndroidAppsView extends StatelessWidget {
       onTap: () {
         launchInBrowser(
             'https://play.google.com/store/apps/dev?id=6660530813735178327');
+      },
+    );
+  }
+}
+
+class _TestHiveView extends StatefulWidget {
+  const _TestHiveView();
+
+  @override
+  State<_TestHiveView> createState() => _TestHiveViewState();
+}
+
+class _TestHiveViewState extends State<_TestHiveView> {
+  late int value;
+
+  @override
+  void initState() {
+    super.initState();
+    value = HiveBoxProvider.getInstance(boxName: appBoxName)
+        .get('test_hive', defaultValue: 0);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      child: Text('Value: $value'),
+      onTap: () {
+        final newValue = value + 1;
+        HiveBoxProvider.getInstance(boxName: appBoxName)
+            .put('test_hive', newValue);
+        setState(() {
+          value = newValue;
+        });
       },
     );
   }
