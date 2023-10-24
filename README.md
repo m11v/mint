@@ -20,5 +20,9 @@ Common views & utils package for MintMinter app
  - HiveBoxProvider
  - KeyValueStorageProvider
 
+## Content Provider
+ - ContentProvider 
+ - AssetProvider
+
 ## Utils
  - launchInBrowser
