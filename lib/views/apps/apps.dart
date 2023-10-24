@@ -12,8 +12,8 @@ const huangdaxianTile = AppTile(
 
 const guanyinlingqian2023Tile = AppTile(
   icon: MintImages.gylq2023,
-  appName: '观音灵签 - 求签解签',
+  appName: '观音灵签 增强版',
   appUrl:
       'https://play.google.com/store/apps/details?id=com.mintminter.guanyinlingqian2023',
-  description: '观音菩萨为众生消灾祈福解难',
+  description: '观音菩萨为众生消灾、祈福、解难',
 );
