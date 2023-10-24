@@ -31,3 +31,6 @@
 
 ## 1.0.9
 * Add `ContentProvider` and `AssetProvider`
+
+## 1.0.10
+* Add `AppTile`

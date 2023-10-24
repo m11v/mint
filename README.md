@@ -14,6 +14,7 @@ Common views & utils package for MintMinter app
 
 ## Views
  - AboutView
+ - AppTile
  - PageContent
 
 ## Key-Value Storage
