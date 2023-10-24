@@ -25,3 +25,6 @@
 
 ## 1.0.7
 * Fix bugs
+* 
+## 1.0.8
+* Add `KeyValueStorageProvider` and `HiveBoxProvider`

@@ -16,5 +16,9 @@ Common views & utils package for MintMinter app
  - AboutView
  - PageContent
 
+## Key-Value Storage
+ - HiveBoxProvider
+ - KeyValueStorageProvider
+
 ## Utils
  - launchInBrowser
