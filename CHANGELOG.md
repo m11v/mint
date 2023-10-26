@@ -40,3 +40,6 @@
 
 ## 1.0.12
 * Fix a bug
+
+## 1.0.13
+* Add IconTextView
