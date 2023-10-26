@@ -2,6 +2,7 @@ import 'package:example_mint/ad/example_ad_provider.dart';
 import 'package:example_mint/main.dart';
 import 'package:flutter/material.dart';
 import 'package:mintminter_mint/mint.dart';
+import 'package:mintminter_mint/views/icon_text_view.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -36,6 +37,17 @@ class HomePage extends StatelessWidget {
             ),
             const MintButton(
               text: 'Disabled Button',
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+            Container(
+              color: Theme.of(context).colorScheme.primary,
+              padding: const EdgeInsets.all(20),
+              child: const IconTextView(
+                icon: Icons.shuffle_on_rounded,
+                text: 'Shuffle',
+              ),
             ),
           ],
         ),
