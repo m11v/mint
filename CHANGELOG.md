@@ -43,3 +43,6 @@
 
 ## 1.0.13
 * Add IconTextView
+
+## 1.0.14
+* Remove the link in AboutView
