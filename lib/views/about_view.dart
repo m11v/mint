@@ -49,7 +49,7 @@ class AboutView extends StatelessWidget {
         const SizedBox(
           height: 10,
         ),
-        const _DeveloperLinkView(),
+        const _DeveloperView(),
         if (child != null) ...[
           const SizedBox(
             height: 10,
@@ -61,46 +61,33 @@ class AboutView extends StatelessWidget {
   }
 }
 
-class _DeveloperLinkView extends StatelessWidget {
-  const _DeveloperLinkView();
+class _DeveloperView extends StatelessWidget {
+  const _DeveloperView();
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      child: Text.rich(
-        TextSpan(
-          children: [
-            const TextSpan(
-              text: 'Produced by ',
+    return Text.rich(
+      TextSpan(
+        children: [
+          const TextSpan(
+            text: 'Produced by ',
+          ),
+          WidgetSpan(
+            child: Image.asset(
+              MintImages.mintminter,
+              width: 16,
+              height: 16,
             ),
-            WidgetSpan(
-              child: Image.asset(
-                MintImages.mintminter,
-                width: 16,
-                height: 16,
-              ),
-            ),
-            const WidgetSpan(
-                child: SizedBox(
-              width: 4,
-            )),
-            const TextSpan(
-                text: 'MintMinter',
-                style: TextStyle(decoration: TextDecoration.underline)),
-            WidgetSpan(
-              child: Icon(
-                Icons.open_in_new,
-                size: 14,
-                color: Theme.of(context).colorScheme.secondary,
-              ),
-            ),
-          ],
-        ),
+          ),
+          const WidgetSpan(
+              child: SizedBox(
+            width: 4,
+          )),
+          const TextSpan(
+            text: 'MintMinter',
+          ),
+        ],
       ),
-      onTap: () {
-        launchInBrowser(
-            'https://play.google.com/store/apps/dev?id=6660530813735178327');
-      },
     );
   }
 }
