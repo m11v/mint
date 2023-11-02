@@ -24,19 +24,19 @@ class IconTextView extends StatelessWidget {
           WidgetSpan(
               child: Icon(
                 icon,
-                size: iconSize ?? 16,
-                color: color ?? Theme.of(context).colorScheme.onPrimary,
+                size: iconSize,
+                color: color ?? Theme.of(context).colorScheme.primary,
               ),
               alignment: PlaceholderAlignment.middle),
           WidgetSpan(
               child: Padding(
-                padding: const EdgeInsets.only(left: 4),
+                padding: const EdgeInsets.only(left: 5),
                 child: Text(
                   text,
                   style: textStyle ??
-                      Theme.of(context).textTheme.bodySmall?.copyWith(
+                      Theme.of(context).textTheme.bodyLarge?.copyWith(
                           color:
-                              color ?? Theme.of(context).colorScheme.onPrimary),
+                              color ?? Theme.of(context).colorScheme.primary),
                 ),
               ),
               alignment: PlaceholderAlignment.middle),

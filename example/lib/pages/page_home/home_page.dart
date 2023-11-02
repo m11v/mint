@@ -42,11 +42,13 @@ class HomePage extends StatelessWidget {
               height: 40,
             ),
             Container(
-              color: Theme.of(context).colorScheme.primary,
+              color: Theme.of(context).colorScheme.primaryContainer,
+              alignment: Alignment.center,
               padding: const EdgeInsets.all(20),
               child: const IconTextView(
                 icon: Icons.shuffle_on_rounded,
                 text: 'Shuffle',
+                iconSize: 20,
               ),
             ),
           ],
