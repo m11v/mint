@@ -46,3 +46,6 @@
 
 ## 1.0.14
 * Remove the link in AboutView
+
+## 1.0.15
+* Update IconTextView
