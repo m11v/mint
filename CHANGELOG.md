@@ -49,3 +49,6 @@
 
 ## 1.0.15
 * Update IconTextView
+
+## 1.0.16
+* Add InMemoryBoxProvider
