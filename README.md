@@ -21,6 +21,7 @@ Common views & utils package for MintMinter app
 
 ## Key-Value Storage
  - HiveBoxProvider
+ - InMemoryBoxProvider
  - KeyValueStorageProvider
 
 ## Content Provider
