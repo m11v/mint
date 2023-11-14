@@ -7,11 +7,6 @@ Common views & utils package for MintMinter app
 [![Pub](https://img.shields.io/pub/v/mintminter_mint?label=Pub)](https://pub.dev/packages/mintminter_mint)
 [![Package publisher](https://img.shields.io/pub/publisher/mintminter_mint.svg)](https://pub.dev/packages/mintminter_mint/publisher)
 
-## Google mobile ads toolkit
- - AdBanner
- - AdIdProvider
- - AdType
-
 ## Views
  - AboutView
  - AppTile

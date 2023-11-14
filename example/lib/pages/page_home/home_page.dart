@@ -1,4 +1,3 @@
-import 'package:example_mint/ad/example_ad_provider.dart';
 import 'package:example_mint/main.dart';
 import 'package:flutter/material.dart';
 import 'package:mintminter_mint/mint.dart';
@@ -16,12 +15,6 @@ class HomePage extends StatelessWidget {
       body: PageContent(
         child: ListView(
           children: <Widget>[
-            AdBanner(
-              padding: const EdgeInsets.only(bottom: 20),
-              type:
-                  const ExampleTopBannerAndroid(unitId: AdIdProvider.mockAdId),
-              adIdProvider: ExampleAdProvider.getInstance(),
-            ),
             const _MintMinterAndroidAppsView(),
             const _TestAboutView(),
             const SizedBox(
