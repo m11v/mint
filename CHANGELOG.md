@@ -52,3 +52,6 @@
 
 ## 1.0.16
 * Add InMemoryBoxProvider
+
+## 2.0.0
+* Remove ad utils.
