@@ -1,6 +1,8 @@
 import 'package:example_mint/main.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mintminter_mint/mint.dart';
+import 'package:mintminter_mint/upgrader/views/upgrade_tile.dart';
 import 'package:mintminter_mint/views/icon_text_view.dart';
 
 class HomePage extends StatelessWidget {
@@ -12,9 +14,38 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('mintminter_mint Example'),
       ),
-      body: PageContent(
+      body: MultiRepositoryProvider(
+        providers: [
+          RepositoryProvider<AppAttributesRepository>(
+            create: (context) => AppAttributesRepository(),
+          ),
+        ],
+        child: const HomePageContentView(),
+      ),
+    );
+  }
+}
+
+class HomePageContentView extends StatelessWidget {
+  const HomePageContentView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<UpgradeBloc>(
+          create: (context) => UpgradeBloc(
+            appAttributesRepository: context.read<AppAttributesRepository>(),
+          ),
+        ),
+      ],
+      child: PageContent(
         child: ListView(
           children: <Widget>[
+            const UpgradeTile(
+              titleText: 'New version is available!',
+              subtitleText: 'Click here to upgrade.',
+            ),
             const _MintMinterAndroidAppsView(),
             const _TestAboutView(),
             const SizedBox(
