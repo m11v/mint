@@ -36,7 +36,12 @@ class HomePageContentView extends StatelessWidget {
         BlocProvider<UpgradeBloc>(
           create: (context) => UpgradeBloc(
             appAttributesRepository: context.read<AppAttributesRepository>(),
-          ),
+          )..add(const UpgradeEventChecked(
+              versionCode: 1,
+              pageUrl:
+                  'https://mintminterdev.blogspot.com/p/easy-us-citizenship-test.html',
+              market: AppMarket.playStore,
+            )),
         ),
       ],
       child: PageContent(
