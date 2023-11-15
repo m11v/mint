@@ -55,3 +55,6 @@
 
 ## 2.0.0
 * Remove ad utils.
+
+## 2.1.0
+* Add utils for the upgrade reminder.
