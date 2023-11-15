@@ -58,3 +58,6 @@
 
 ## 2.1.0
 * Add utils for the upgrade reminder.
+
+## 2.1.1
+* Fix the UpgradeTile.

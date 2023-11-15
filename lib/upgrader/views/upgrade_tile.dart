@@ -16,12 +16,6 @@ class UpgradeTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.read<UpgradeBloc>().add(const UpgradeEventChecked(
-          versionCode: 1,
-          pageUrl:
-              'https://mintminterdev.blogspot.com/p/easy-us-citizenship-test.html',
-          market: AppMarket.playStore,
-        ));
     return BlocBuilder<UpgradeBloc, UpgradeState>(
       builder: (context, state) {
         if (state.needUpgrade) {
