@@ -25,3 +25,9 @@ Common views & utils package for MintMinter app
 
 ## Utils
  - launchInBrowser
+
+## Upgrader
+ - AppAttributesApiClient
+ - AppAttributesRepository
+ - UpgradeBloc
+ - UpgradeTile
