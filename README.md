@@ -10,6 +10,7 @@ Common views & utils package for MintMinter app
 ## Views
  - AboutView
  - AppTile
+ - HanView
  - IconTextView
  - MintButton
  - PageContent

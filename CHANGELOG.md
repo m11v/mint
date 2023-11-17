@@ -12,7 +12,7 @@
 * Add view and util for google mobile ads
 
 ## 1.0.3
-* Add padding configuration to AdBanner
+* Add padding configuration to `AdBanner`
 
 ## 1.0.4
 * Add example app
@@ -42,22 +42,25 @@
 * Fix a bug
 
 ## 1.0.13
-* Add IconTextView
+* Add `IconTextView`
 
 ## 1.0.14
-* Remove the link in AboutView
+* Remove the link in `AboutView`
 
 ## 1.0.15
-* Update IconTextView
+* Update `IconTextView`
 
 ## 1.0.16
-* Add InMemoryBoxProvider
+* Add `InMemoryBoxProvider`
 
 ## 2.0.0
 * Remove ad utils.
 
 ## 2.1.0
-* Add utils for the upgrade reminder.
+* Add utils for the upgrade reminder
 
 ## 2.1.1
-* Fix the UpgradeTile.
+* Fix the `UpgradeTile`
+
+## 2.1.2
+* Add `HanView`
