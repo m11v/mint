@@ -12,42 +12,50 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('mintminter_mint Example'),
-      ),
-      body: MultiRepositoryProvider(
+    return MultiRepositoryProvider(
+      providers: [
+        RepositoryProvider<AppAttributesRepository>(
+          create: (context) => AppAttributesRepository(),
+        ),
+      ],
+      child: MultiBlocProvider(
         providers: [
-          RepositoryProvider<AppAttributesRepository>(
-            create: (context) => AppAttributesRepository(),
+          BlocProvider<UpgradeBloc>(
+            create: (context) => UpgradeBloc(
+              appAttributesRepository: context.read<AppAttributesRepository>(),
+            )..add(const UpgradeEventChecked(
+                versionCode: 1,
+                pageUrl:
+                    'https://mintminterdev.blogspot.com/p/easy-us-citizenship-test.html',
+                market: AppMarket.playStore,
+              )),
+          ),
+          BlocProvider<HanCubit>(
+            create: (context) => HanCubit(),
           ),
         ],
-        child: MultiBlocProvider(
-          providers: [
-            BlocProvider<UpgradeBloc>(
-              create: (context) => UpgradeBloc(
-                appAttributesRepository:
-                    context.read<AppAttributesRepository>(),
-              )..add(const UpgradeEventChecked(
-                  versionCode: 1,
-                  pageUrl:
-                      'https://mintminterdev.blogspot.com/p/easy-us-citizenship-test.html',
-                  market: AppMarket.playStore,
-                )),
-            ),
-            BlocProvider<HanCubit>(
-              create: (context) => HanCubit(),
-            ),
-          ],
-          child: const HomePageContentView(),
-        ),
+        child: const _HomePageView(),
       ),
     );
   }
 }
 
-class HomePageContentView extends StatelessWidget {
-  const HomePageContentView({super.key});
+class _HomePageView extends StatelessWidget {
+  const _HomePageView();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('mintminter_mint Example'),
+      ),
+      body: const _HomePageContentView(),
+    );
+  }
+}
+
+class _HomePageContentView extends StatelessWidget {
+  const _HomePageContentView();
 
   @override
   Widget build(BuildContext context) {
