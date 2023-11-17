@@ -10,7 +10,6 @@ Common views & utils package for MintMinter app
 ## Views
  - AboutView
  - AppTile
- - HanView
  - IconTextView
  - MintButton
  - PageContent
@@ -32,3 +31,9 @@ Common views & utils package for MintMinter app
  - AppAttributesRepository
  - UpgradeBloc
  - UpgradeTile
+
+## Han
+ - HanCubit
+ - HanType
+ - HanView
+ - MintHanView

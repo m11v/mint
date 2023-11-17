@@ -64,3 +64,6 @@
 
 ## 2.1.2
 * Add `HanView`
+
+## 2.1.3
+* Add `MintHanView`
