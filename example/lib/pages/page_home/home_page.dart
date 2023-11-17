@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:example_mint/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mintminter_mint/han/mint_han_popup_menu_button.dart';
 import 'package:mintminter_mint/mint.dart';
 import 'package:mintminter_mint/upgrader/views/upgrade_tile.dart';
 import 'package:mintminter_mint/views/icon_text_view.dart';
@@ -48,6 +49,9 @@ class _HomePageView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('mintminter_mint Example'),
+        actions: const [
+          MintHanPopupMenuButton(),
+        ],
       ),
       body: const _HomePageContentView(),
     );

@@ -67,3 +67,6 @@
 
 ## 2.1.3
 * Add `MintHanView`
+
+## 2.1.4
+* Add `MintHanPopupMenuButton`

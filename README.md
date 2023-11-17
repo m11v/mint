@@ -37,3 +37,4 @@ Common views & utils package for MintMinter app
  - HanType
  - HanView
  - MintHanView
+ - MintHanPopupMenuButton
