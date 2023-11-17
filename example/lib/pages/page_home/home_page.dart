@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:example_mint/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,7 +22,25 @@ class HomePage extends StatelessWidget {
             create: (context) => AppAttributesRepository(),
           ),
         ],
-        child: const HomePageContentView(),
+        child: MultiBlocProvider(
+          providers: [
+            BlocProvider<UpgradeBloc>(
+              create: (context) => UpgradeBloc(
+                appAttributesRepository:
+                    context.read<AppAttributesRepository>(),
+              )..add(const UpgradeEventChecked(
+                  versionCode: 1,
+                  pageUrl:
+                      'https://mintminterdev.blogspot.com/p/easy-us-citizenship-test.html',
+                  market: AppMarket.playStore,
+                )),
+            ),
+            BlocProvider<HanCubit>(
+              create: (context) => HanCubit(),
+            ),
+          ],
+          child: const HomePageContentView(),
+        ),
       ),
     );
   }
@@ -31,72 +51,67 @@ class HomePageContentView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider<UpgradeBloc>(
-          create: (context) => UpgradeBloc(
-            appAttributesRepository: context.read<AppAttributesRepository>(),
-          )..add(const UpgradeEventChecked(
-              versionCode: 1,
-              pageUrl:
-                  'https://mintminterdev.blogspot.com/p/easy-us-citizenship-test.html',
-              market: AppMarket.playStore,
-            )),
-        ),
-      ],
-      child: PageContent(
-        child: ListView(
-          children: <Widget>[
-            const UpgradeTile(
-              titleText: 'New version is available!',
-              subtitleText: 'Click here to upgrade.',
+    return PageContent(
+      child: ListView(
+        children: <Widget>[
+          const UpgradeTile(
+            titleText: 'New version is available!',
+            subtitleText: 'Click here to upgrade.',
+          ),
+          const _MintMinterAndroidAppsView(),
+          const _TestAboutView(),
+          const SizedBox(
+            height: 40,
+          ),
+          const _TestHiveView(),
+          const SizedBox(
+            height: 40,
+          ),
+          const _TestContentView(),
+          const SizedBox(
+            height: 40,
+          ),
+          const MintButton(
+            text: 'Disabled Button',
+          ),
+          const SizedBox(
+            height: 40,
+          ),
+          Container(
+            color: Theme.of(context).colorScheme.primaryContainer,
+            alignment: Alignment.center,
+            padding: const EdgeInsets.all(20),
+            child: const IconTextView(
+              icon: Icons.shuffle_on_rounded,
+              text: 'Shuffle',
+              iconSize: 20,
             ),
-            const _MintMinterAndroidAppsView(),
-            const _TestAboutView(),
-            const SizedBox(
-              height: 40,
+          ),
+          const SizedBox(
+            height: 40,
+          ),
+          Container(
+            height: 40,
+            color: Theme.of(context).primaryColor,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                const HanView(type: HanType.unknown),
+                const HanView(type: HanType.simplified),
+                const HanView(type: HanType.traditional),
+                InkWell(
+                  child: const MintHanView(),
+                  onTap: () {
+                    int index = Random().nextInt(3);
+                    context
+                        .read<HanCubit>()
+                        .change(type: HanType.values[index]);
+                  },
+                )
+              ],
             ),
-            const _TestHiveView(),
-            const SizedBox(
-              height: 40,
-            ),
-            const _TestContentView(),
-            const SizedBox(
-              height: 40,
-            ),
-            const MintButton(
-              text: 'Disabled Button',
-            ),
-            const SizedBox(
-              height: 40,
-            ),
-            Container(
-              color: Theme.of(context).colorScheme.primaryContainer,
-              alignment: Alignment.center,
-              padding: const EdgeInsets.all(20),
-              child: const IconTextView(
-                icon: Icons.shuffle_on_rounded,
-                text: 'Shuffle',
-                iconSize: 20,
-              ),
-            ),
-            const SizedBox(
-              height: 40,
-            ),
-            Container(
-              height: 40,
-              color: Theme.of(context).primaryColor,
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  HanView(type: HanViewType.unknown),
-                  HanView(type: HanViewType.simplified),
-                  HanView(type: HanViewType.traditional),
-                ],
-              ),
-            )
-          ],
-        ),
+          )
+        ],
       ),
     );
   }

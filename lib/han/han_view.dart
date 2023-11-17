@@ -1,32 +1,6 @@
 import 'package:flutter/material.dart';
 
-enum HanViewType {
-  unknown,
-  simplified,
-  traditional,
-}
-
-extension HanViewTypeX on HanViewType {
-  String get text {
-    switch (this) {
-      case HanViewType.unknown:
-        return '文';
-      case HanViewType.simplified:
-        return '简';
-      case HanViewType.traditional:
-        return '繁';
-    }
-  }
-
-  bool get isSelected {
-    switch (this) {
-      case HanViewType.unknown:
-        return false;
-      default:
-        return true;
-    }
-  }
-}
+import 'han.dart';
 
 class HanView extends StatelessWidget {
   const HanView({
@@ -34,7 +8,7 @@ class HanView extends StatelessWidget {
     required this.type,
   });
 
-  final HanViewType type;
+  final HanType type;
 
   @override
   Widget build(BuildContext context) {
