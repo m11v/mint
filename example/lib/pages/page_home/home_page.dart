@@ -80,6 +80,21 @@ class HomePageContentView extends StatelessWidget {
                 iconSize: 20,
               ),
             ),
+            const SizedBox(
+              height: 40,
+            ),
+            Container(
+              height: 40,
+              color: Theme.of(context).primaryColor,
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  HanView(type: HanViewType.unknown),
+                  HanView(type: HanViewType.simplified),
+                  HanView(type: HanViewType.traditional),
+                ],
+              ),
+            )
           ],
         ),
       ),
