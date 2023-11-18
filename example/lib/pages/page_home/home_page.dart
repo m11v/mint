@@ -31,8 +31,11 @@ class HomePage extends StatelessWidget {
                 market: AppMarket.playStore,
               )),
           ),
-          BlocProvider<HanCubit>(
-            create: (context) => HanCubit(),
+          BlocProvider<HanBloc>(
+            create: (context) => HanBloc(
+              keyValueStorageProvider:
+                  HiveBoxProvider.getInstance(boxName: appBoxName),
+            ),
           ),
         ],
         child: const _HomePageView(),
@@ -116,8 +119,8 @@ class _HomePageContentView extends StatelessWidget {
                   onTap: () {
                     int index = Random().nextInt(3);
                     context
-                        .read<HanCubit>()
-                        .change(type: HanType.values[index]);
+                        .read<HanBloc>()
+                        .add(HanEventChanged(hanType: HanType.values[index]));
                   },
                 )
               ],
