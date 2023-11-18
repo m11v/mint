@@ -9,11 +9,11 @@ class MintHanPopupMenuButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HanCubit, HanType>(
-      builder: (context, hanType) {
+    return BlocBuilder<HanBloc, HanState>(
+      builder: (context, state) {
         return PopupMenuButton(
           icon: HanView(
-            type: hanType,
+            type: state.hanType,
           ),
           itemBuilder: (context) => HanType.values
               .map(
@@ -23,7 +23,8 @@ class MintHanPopupMenuButton extends StatelessWidget {
                 ),
               )
               .toList(),
-          onSelected: (type) => context.read<HanCubit>().change(type: type),
+          onSelected: (type) =>
+              context.read<HanBloc>().add(HanEventChanged(hanType: type)),
         );
       },
     );

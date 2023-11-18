@@ -8,9 +8,9 @@ class MintHanView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HanCubit, HanType>(
-      builder: (context, type) {
-        return HanView(type: type);
+    return BlocBuilder<HanBloc, HanState>(
+      builder: (context, state) {
+        return HanView(type: state.hanType);
       },
     );
   }

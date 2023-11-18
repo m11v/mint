@@ -33,7 +33,7 @@ Common views & utils package for MintMinter app
  - UpgradeTile
 
 ## Han
- - HanCubit
+ - HanBloc
  - HanType
  - HanView
  - MintHanView

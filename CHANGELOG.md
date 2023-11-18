@@ -70,3 +70,6 @@
 
 ## 2.1.4
 * Add `MintHanPopupMenuButton`
+
+## 2.1.5
+* Refactor the `HanCubit` to `HanBloc`
