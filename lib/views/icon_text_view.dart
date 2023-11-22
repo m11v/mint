@@ -5,39 +5,27 @@ class IconTextView extends StatelessWidget {
     super.key,
     required this.icon,
     required this.text,
-    this.color,
-    this.iconSize,
-    this.textStyle,
+    this.padding,
   });
 
-  final IconData icon;
-  final String text;
-  final Color? color;
-  final double? iconSize;
-  final TextStyle? textStyle;
+  final Widget icon;
+  final Widget text;
+
+  /// Insets a padding between its icon and text.
+  ///
+  /// If null, `EdgeInsets.only(left: 6)` is used.
+  final EdgeInsetsGeometry? padding;
 
   @override
   Widget build(BuildContext context) {
     return Text.rich(
       TextSpan(
         children: [
-          WidgetSpan(
-              child: Icon(
-                icon,
-                size: iconSize,
-                color: color ?? Theme.of(context).colorScheme.primary,
-              ),
-              alignment: PlaceholderAlignment.middle),
+          WidgetSpan(child: icon, alignment: PlaceholderAlignment.middle),
           WidgetSpan(
               child: Padding(
-                padding: const EdgeInsets.only(left: 5),
-                child: Text(
-                  text,
-                  style: textStyle ??
-                      Theme.of(context).textTheme.bodyLarge?.copyWith(
-                          color:
-                              color ?? Theme.of(context).colorScheme.primary),
-                ),
+                padding: padding ?? const EdgeInsets.only(left: 6),
+                child: text,
               ),
               alignment: PlaceholderAlignment.middle),
         ],
