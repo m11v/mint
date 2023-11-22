@@ -97,9 +97,8 @@ class _HomePageContentView extends StatelessWidget {
             alignment: Alignment.center,
             padding: const EdgeInsets.all(20),
             child: const IconTextView(
-              icon: Icons.shuffle_on_rounded,
-              text: 'Shuffle',
-              iconSize: 20,
+              icon: Icon(Icons.handshake_outlined),
+              text: Text('Example of IconTextView'),
             ),
           ),
           const SizedBox(

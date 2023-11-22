@@ -73,3 +73,6 @@
 
 ## 2.1.5
 * Refactor the `HanCubit` to `HanBloc`
+
+## 2.1.6
+* Refactor the `IconTextView`
