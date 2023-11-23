@@ -93,7 +93,7 @@ class _HomePageContentView extends StatelessWidget {
             height: 40,
           ),
           Container(
-            color: Theme.of(context).colorScheme.primaryContainer,
+            color: context.primaryContainerColor,
             alignment: Alignment.center,
             padding: const EdgeInsets.all(20),
             child: const IconTextView(
@@ -106,7 +106,7 @@ class _HomePageContentView extends StatelessWidget {
           ),
           Container(
             height: 40,
-            color: Theme.of(context).primaryColor,
+            color: context.primaryColor,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -169,7 +169,7 @@ class _MintMinterAndroidAppsView extends StatelessWidget {
               child: Icon(
                 Icons.open_in_new,
                 size: 14,
-                color: Theme.of(context).colorScheme.secondary,
+                color: context.secondaryColor,
               ),
             ),
           ],

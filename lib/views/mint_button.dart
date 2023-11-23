@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mintminter_mint/extensions/context_extension.dart';
 
 class MintButton extends StatelessWidget {
   const MintButton({
@@ -16,9 +17,8 @@ class MintButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: isEnabled
-              ? Theme.of(context).primaryColor
-              : Theme.of(context).disabledColor,
+          backgroundColor:
+              isEnabled ? context.primaryColor : context.disabledColor,
           padding: const EdgeInsets.symmetric(horizontal: 16),
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(10)),

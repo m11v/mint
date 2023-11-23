@@ -38,3 +38,7 @@ Common views & utils package for MintMinter app
  - HanView
  - MintHanView
  - MintHanPopupMenuButton
+
+## Extensions
+ - BuildContextTextTheme
+ - BuildContextColor

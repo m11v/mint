@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mintminter_mint/extensions/context_extension.dart';
 
 import '../../utils/utils.dart';
 import '../upgrader.dart';
@@ -24,24 +25,22 @@ class UpgradeTile extends StatelessWidget {
               bottom: 20,
             ),
             child: ListTile(
-              tileColor: Theme.of(context).colorScheme.primaryContainer,
+              tileColor: context.primaryContainerColor,
               leading: Icon(
                 Icons.notifications_active,
-                color: Theme.of(context).colorScheme.primary,
+                color: context.primaryColor,
               ),
               title: Text(
                 titleText,
-                style: TextStyle(
-                    color: Theme.of(context).colorScheme.onPrimaryContainer),
+                style: TextStyle(color: context.onPrimaryContainerColor),
               ),
               subtitle: Text(
                 subtitleText,
-                style: TextStyle(
-                    color: Theme.of(context).colorScheme.onPrimaryContainer),
+                style: TextStyle(color: context.onPrimaryContainerColor),
               ),
               trailing: Icon(
                 Icons.upgrade,
-                color: Theme.of(context).colorScheme.onPrimaryContainer,
+                color: context.onPrimaryContainerColor,
               ),
               onTap: () {
                 launchInBrowser(state.url!);

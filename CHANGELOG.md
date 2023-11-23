@@ -76,3 +76,6 @@
 
 ## 2.1.6
 * Refactor the `IconTextView`
+
+## 2.1.7
+* Add extensions on `BuildContext`
