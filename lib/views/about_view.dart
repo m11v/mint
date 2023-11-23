@@ -31,20 +31,16 @@ class AboutView extends StatelessWidget {
         ),
         Text(
           appName,
-          style: Theme.of(context)
-              .textTheme
-              .titleLarge
-              ?.copyWith(color: Theme.of(context).primaryColor),
+          style: context.textTheme.titleLarge
+              ?.copyWith(color: context.primaryColor),
         ),
         const SizedBox(
           height: 10,
         ),
         Text(
           version,
-          style: Theme.of(context)
-              .textTheme
-              .titleMedium
-              ?.copyWith(color: Theme.of(context).primaryColor),
+          style: context.textTheme.titleMedium
+              ?.copyWith(color: context.primaryColor),
         ),
         const SizedBox(
           height: 10,

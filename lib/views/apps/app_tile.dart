@@ -23,8 +23,7 @@ class AppTile extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: const BorderRadius.all(Radius.circular(6)),
-          border: Border.all(
-              color: Theme.of(context).colorScheme.onPrimaryContainer),
+          border: Border.all(color: context.onPrimaryContainerColor),
         ),
         child: Image.asset(
           icon,
@@ -32,18 +31,18 @@ class AppTile extends StatelessWidget {
       ),
       title: Text(
         appName,
-        style: Theme.of(context).textTheme.titleMedium,
+        style: context.textTheme.titleMedium,
       ),
       subtitle: description != null
           ? Text(description!,
               overflow: TextOverflow.ellipsis,
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: Theme.of(context).colorScheme.onPrimaryContainer,
-                  ))
+              style: context.textTheme.bodyMedium?.copyWith(
+                color: context.onPrimaryContainerColor,
+              ))
           : null,
       trailing: Icon(
         Icons.open_in_new,
-        color: Theme.of(context).primaryColor.withOpacity(0.7),
+        color: context.primaryColor.withOpacity(0.7),
       ),
       onTap: () {
         launchInBrowser(appUrl);
