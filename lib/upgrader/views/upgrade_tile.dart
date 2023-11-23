@@ -32,13 +32,11 @@ class UpgradeTile extends StatelessWidget {
               ),
               title: Text(
                 titleText,
-                style: TextStyle(
-                    color: context.onPrimaryContainerColor),
+                style: TextStyle(color: context.onPrimaryContainerColor),
               ),
               subtitle: Text(
                 subtitleText,
-                style: TextStyle(
-                    color: context.onPrimaryContainerColor),
+                style: TextStyle(color: context.onPrimaryContainerColor),
               ),
               trailing: Icon(
                 Icons.upgrade,
