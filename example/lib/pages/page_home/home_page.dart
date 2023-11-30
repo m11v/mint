@@ -104,9 +104,8 @@ class _HomePageContentView extends StatelessWidget {
           const SizedBox(
             height: 40,
           ),
-          Container(
-            height: 40,
-            color: context.primaryColor,
+          MintFlatCard(
+            backgroundColor: context.secondaryColor,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -124,7 +123,7 @@ class _HomePageContentView extends StatelessWidget {
                 )
               ],
             ),
-          )
+          ),
         ],
       ),
     );
