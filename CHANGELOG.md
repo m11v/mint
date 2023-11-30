@@ -79,3 +79,6 @@
 
 ## 2.1.7
 * Add extensions on `BuildContext`
+
+## 2.1.8
+* Add `MintFlatCard`

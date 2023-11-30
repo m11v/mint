@@ -13,6 +13,7 @@ Common views & utils package for MintMinter app
  - IconTextView
  - MintButton
  - PageContent
+ - MintFlatCard
 
 ## Key-Value Storage
  - HiveBoxProvider
