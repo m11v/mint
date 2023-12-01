@@ -82,3 +82,6 @@
 
 ## 2.1.8
 * Add `MintFlatCard`
+
+## 2.1.9
+* Fix the margin in `MintFlatCard`

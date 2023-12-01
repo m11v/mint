@@ -3,7 +3,7 @@ description: A Flutter package - Common views, utils and extensions for MintMint
 homepage: https://github.com/m11v/mint
 repository: https://github.com/m11v/mint
 
-version: 2.1.8
+version: 2.1.9
 
 environment:
   sdk: '>=3.1.2 <4.0.0'
