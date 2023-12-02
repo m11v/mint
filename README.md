@@ -14,6 +14,7 @@ Common views & utils package for MintMinter app
  - MintButton
  - PageContent
  - MintFlatCard
+ - MintAlertDialog
 
 ## Key-Value Storage
  - HiveBoxProvider

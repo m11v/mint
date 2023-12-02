@@ -86,3 +86,7 @@
 ## 2.1.9
 * Fix the margin in `MintFlatCard`
 * Upgrade lint
+
+## 2.1.10
+* Fix the barrel files
+* Add `MintAlertDialog`
