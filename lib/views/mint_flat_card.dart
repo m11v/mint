@@ -30,7 +30,7 @@ class MintFlatCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(borderRadius ?? 6),
       ),
       padding: padding ?? const EdgeInsets.all(16),
-      margin: margin ?? const EdgeInsets.only(top: 20),
+      margin: margin,
       child: child,
     );
   }
