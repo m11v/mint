@@ -122,6 +122,27 @@ class _HomePageContentView extends StatelessWidget {
               ],
             ),
           ),
+          const SizedBox(
+            height: 40,
+          ),
+          InkWell(
+            child: const Text('Show dialog'),
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (ctx) => MintAlertDialog(
+                  titleText: 'Confirmation',
+                  contentText: 'Some content',
+                  onYesButtonTapped: () {
+                    Navigator.of(ctx).pop();
+                  },
+                  onNoButtonTapped: () {
+                    Navigator.of(ctx).pop();
+                  },
+                ),
+              );
+            },
+          )
         ],
       ),
     );
