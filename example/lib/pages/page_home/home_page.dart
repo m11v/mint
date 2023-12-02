@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mintminter_mint/han/mint_han_popup_menu_button.dart';
 import 'package:mintminter_mint/mint.dart';
-import 'package:mintminter_mint/views/mint_alert_dialog.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
