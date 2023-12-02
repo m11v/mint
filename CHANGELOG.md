@@ -85,3 +85,4 @@
 
 ## 2.1.9
 * Fix the margin in `MintFlatCard`
+* Upgrade lint
