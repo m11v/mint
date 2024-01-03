@@ -14,7 +14,10 @@ class HomePage extends StatelessWidget {
     return MultiRepositoryProvider(
       providers: [
         RepositoryProvider<AppAttributesRepository>(
-          create: (context) => AppAttributesRepository(),
+          create: (context) => AppAttributesRepository(
+            keyValueStorageProvider:
+                HiveBoxProvider.getInstance(boxName: appBoxName),
+          ),
         ),
       ],
       child: MultiBlocProvider(
