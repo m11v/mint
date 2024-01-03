@@ -90,3 +90,6 @@
 ## 2.1.10
 * Fix the barrel files
 * Add `MintAlertDialog`
+
+## 2.2.0
+* Cache AppAttributes locally
