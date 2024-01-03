@@ -19,11 +19,23 @@ class UpgradeBloc extends Bloc<UpgradeEvent, UpgradeState> {
 
   Future<void> _onUpgradeEventChecked(
       UpgradeEventChecked event, Emitter emit) async {
-    final appAttributes = await _appAttributesRepository
-        .getAppAttributesFromPage(pageUrl: event.pageUrl, market: event.market);
+    final localAppAttributes = _appAttributesRepository.getLocalAppAttributes();
 
-    if (event.versionCode < appAttributes.versionCode) {
-      emit(UpgradeState(url: appAttributes.url, market: event.market));
+    if (event.versionCode < localAppAttributes.versionCode) {
+      emit(UpgradeState(url: localAppAttributes.url, market: event.market));
+    } else {
+      final remoteAppAttributes =
+          await _appAttributesRepository.getAppAttributesFromPage(
+              pageUrl: event.pageUrl, market: event.market);
+      if (localAppAttributes.versionCode < remoteAppAttributes.versionCode) {
+        await _appAttributesRepository.saveLocalAppAttributes(
+          remoteAppAttributes,
+        );
+      }
+
+      if (event.versionCode < remoteAppAttributes.versionCode) {
+        emit(UpgradeState(url: remoteAppAttributes.url, market: event.market));
+      }
     }
   }
 }
