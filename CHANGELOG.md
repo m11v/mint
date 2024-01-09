@@ -93,3 +93,6 @@
 
 ## 2.2.0
 * Cache `AppAttributes` locally
+
+## 2.2.1
+* Add `generateList` util
