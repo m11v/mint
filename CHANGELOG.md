@@ -96,3 +96,6 @@
 
 ## 2.2.1
 * Add `generateList` util
+
+## 2.2.2
+* Change `AppMarket`
