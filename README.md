@@ -27,6 +27,7 @@ Common views & utils package for MintMinter app
 
 ## Utils
  - launchInBrowser
+ - generateList
 
 ## Upgrader
  - AppAttributesApiClient
