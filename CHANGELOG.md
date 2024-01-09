@@ -92,4 +92,4 @@
 * Add `MintAlertDialog`
 
 ## 2.2.0
-* Cache AppAttributes locally
+* Cache `AppAttributes` locally
