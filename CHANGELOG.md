@@ -99,3 +99,6 @@
 
 ## 2.2.2
 * Change `AppMarket`
+
+## 2.3.0
+* Upgrader: Support iOS app upgrade
