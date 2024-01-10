@@ -1,6 +1,7 @@
 import 'package:dartx/dartx.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mintminter_mint/mint.dart';
 
 import '../upgrader.dart';
 
@@ -19,14 +20,18 @@ class UpgradeBloc extends Bloc<UpgradeEvent, UpgradeState> {
 
   Future<void> _onUpgradeEventChecked(
       UpgradeEventChecked event, Emitter emit) async {
-    final localAppAttributes = _appAttributesRepository.getLocalAppAttributes();
+    final market = event.market ?? defaultAppMarket;
 
+    final localAppAttributes = _appAttributesRepository.getLocalAppAttributes();
     if (event.versionCode < localAppAttributes.versionCode) {
-      emit(UpgradeState(url: localAppAttributes.url, market: event.market));
+      emit(UpgradeState(url: localAppAttributes.url, market: market));
     } else {
       final remoteAppAttributes =
           await _appAttributesRepository.getAppAttributesFromPage(
-              pageUrl: event.pageUrl, market: event.market);
+        pageUrl: event.pageUrl,
+        market: market,
+      );
+
       if (localAppAttributes.versionCode < remoteAppAttributes.versionCode) {
         await _appAttributesRepository.saveLocalAppAttributes(
           remoteAppAttributes,
@@ -34,7 +39,7 @@ class UpgradeBloc extends Bloc<UpgradeEvent, UpgradeState> {
       }
 
       if (event.versionCode < remoteAppAttributes.versionCode) {
-        emit(UpgradeState(url: remoteAppAttributes.url, market: event.market));
+        emit(UpgradeState(url: remoteAppAttributes.url, market: market));
       }
     }
   }

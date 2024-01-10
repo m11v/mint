@@ -8,12 +8,12 @@ class UpgradeEventChecked extends UpgradeEvent {
   const UpgradeEventChecked({
     required this.versionCode,
     required this.pageUrl,
-    required this.market,
+    this.market,
   });
 
   final int versionCode;
   final String pageUrl;
-  final AppMarket market;
+  final AppMarket? market;
 
   @override
   List<Object?> get props => [
