@@ -102,3 +102,6 @@
 
 ## 2.3.0
 * Upgrader: Support iOS app upgrade
+
+## 2.3.1
+* Upgrader: Change the update icon and color

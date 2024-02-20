@@ -39,8 +39,8 @@ class UpgradeTile extends StatelessWidget {
                 style: TextStyle(color: context.onPrimaryContainerColor),
               ),
               trailing: Icon(
-                Icons.upgrade,
-                color: context.onPrimaryContainerColor,
+                Icons.file_download,
+                color: context.primaryColor,
               ),
               onTap: () {
                 launchInBrowser(state.url!);
