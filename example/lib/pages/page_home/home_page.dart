@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mintminter_mint/han/mint_han_popup_menu_button.dart';
 import 'package:mintminter_mint/mint.dart';
+import 'package:mintminter_mint/settings/hide_ad_cubit.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -33,6 +34,12 @@ class HomePage extends StatelessWidget {
           ),
           BlocProvider<HanBloc>(
             create: (context) => HanBloc(
+              keyValueStorageProvider:
+                  HiveBoxProvider.getInstance(boxName: appBoxName),
+            ),
+          ),
+          BlocProvider<HideAdCubit>(
+            create: (context) => HideAdCubit(
               keyValueStorageProvider:
                   HiveBoxProvider.getInstance(boxName: appBoxName),
             ),
@@ -144,7 +151,11 @@ class _HomePageContentView extends StatelessWidget {
                 ),
               );
             },
-          )
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          const _TestHideAdView(),
         ],
       ),
     );
@@ -263,5 +274,49 @@ class _TestContentViewState extends State<_TestContentView> {
     } else {
       return Text(assetContent);
     }
+  }
+}
+
+class _TestHideAdView extends StatelessWidget {
+  const _TestHideAdView();
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<HideAdCubit, bool>(builder: (context, state) {
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (!state) ...[
+            MintFlatCard(
+              child: Text(
+                'Mock Ad View',
+                style: TextStyle(
+                  color: context.onPrimaryColor,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+          ],
+          MintButton(
+            text: 'Hide Ad',
+            onPressed: () {
+              context.read<HideAdCubit>().hideAd();
+            },
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          MintButton(
+            text: 'Reset',
+            onPressed: () {
+              context.read<HideAdCubit>().reset();
+            },
+          ),
+        ],
+      );
+    });
   }
 }

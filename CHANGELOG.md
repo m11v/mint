@@ -105,3 +105,6 @@
 
 ## 2.3.1
 * Upgrader: Change the update icon and color
+
+## 2.4.1
+* Add `HideAdCubit`
