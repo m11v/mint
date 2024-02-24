@@ -108,3 +108,6 @@
 
 ## 2.4.1
 * Add `HideAdCubit`
+
+## 2.5.0
+* Add `CounterCubit`
