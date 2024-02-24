@@ -43,6 +43,9 @@ class HomePage extends StatelessWidget {
                   HiveBoxProvider.getInstance(boxName: appBoxName),
             ),
           ),
+          BlocProvider<CounterCubit>(
+            create: (context) => CounterCubit(),
+          ),
         ],
         child: const _HomePageView(),
       ),
@@ -155,6 +158,10 @@ class _HomePageContentView extends StatelessWidget {
             height: 20,
           ),
           const _TestHideAdView(),
+          const SizedBox(
+            height: 20,
+          ),
+          const _TestCounterView(),
         ],
       ),
     );
@@ -317,5 +324,57 @@ class _TestHideAdView extends StatelessWidget {
         ],
       );
     });
+  }
+}
+
+class _TestCounterView extends StatelessWidget {
+  const _TestCounterView();
+
+  @override
+  Widget build(BuildContext context) {
+    return MintFlatCard(
+      backgroundColor: context.secondaryColor,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          BlocBuilder<CounterCubit, int>(builder: (context, state) {
+            return Text(
+              'Count $state',
+              style: const TextStyle(
+                color: Colors.white,
+              ),
+            );
+          }),
+          const SizedBox(
+            height: 10,
+          ),
+          MintButton(
+            text: 'Increment',
+            onPressed: () {
+              context.read<CounterCubit>().increment();
+            },
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          MintButton(
+            text: 'Decrement',
+            onPressed: () {
+              context.read<CounterCubit>().decrement();
+            },
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          MintButton(
+            text: 'Reset',
+            onPressed: () {
+              context.read<CounterCubit>().reset();
+            },
+          ),
+        ],
+      ),
+    );
   }
 }
