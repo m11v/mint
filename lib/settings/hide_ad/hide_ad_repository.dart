@@ -17,7 +17,7 @@ class HideAdRepository {
     return isAdHidden;
   }
 
-  void reset() {
-    _keyValueStorageProvider.delete(_hideAdKey);
+  Future<void> reset() async {
+    await _keyValueStorageProvider.delete(_hideAdKey);
   }
 }
