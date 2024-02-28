@@ -111,3 +111,6 @@
 
 ## 2.5.0
 * Add `CounterCubit`
+
+## 2.5.1
+* Add `HideAdRepository` and refactor `HideAdCubit`

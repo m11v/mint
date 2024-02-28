@@ -19,6 +19,12 @@ class HomePage extends StatelessWidget {
                 HiveBoxProvider.getInstance(boxName: appBoxName),
           ),
         ),
+        RepositoryProvider<HideAdRepository>(
+          create: (context) => HideAdRepository(
+            keyValueStorageProvider:
+                HiveBoxProvider.getInstance(boxName: appBoxName),
+          ),
+        ),
       ],
       child: MultiBlocProvider(
         providers: [
@@ -39,8 +45,7 @@ class HomePage extends StatelessWidget {
           ),
           BlocProvider<HideAdCubit>(
             create: (context) => HideAdCubit(
-              keyValueStorageProvider:
-                  HiveBoxProvider.getInstance(boxName: appBoxName),
+              hideAdRepository: context.read<HideAdRepository>(),
             ),
           ),
           BlocProvider<CounterCubit>(
@@ -288,42 +293,42 @@ class _TestHideAdView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HideAdCubit, bool>(builder: (context, state) {
-      return Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          if (!state) ...[
-            MintFlatCard(
-              child: Text(
-                'Mock Ad View',
-                style: TextStyle(
-                  color: context.onPrimaryColor,
+    return MintFlatCard(
+        backgroundColor: context.primaryContainerColor,
+        child: BlocBuilder<HideAdCubit, bool>(builder: (context, state) {
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              if (!state) ...[
+                Text(
+                  'Mock Ad View',
+                  style: TextStyle(
+                    color: context.onPrimaryContainerColor,
+                  ),
                 ),
+                const SizedBox(
+                  height: 10,
+                ),
+              ],
+              MintButton(
+                text: 'Hide Ad',
+                onPressed: () {
+                  context.read<HideAdCubit>().hideAd();
+                },
               ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-          ],
-          MintButton(
-            text: 'Hide Ad',
-            onPressed: () {
-              context.read<HideAdCubit>().hideAd();
-            },
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          MintButton(
-            text: 'Reset',
-            onPressed: () {
-              context.read<HideAdCubit>().reset();
-            },
-          ),
-        ],
-      );
-    });
+              const SizedBox(
+                height: 10,
+              ),
+              MintButton(
+                text: 'Reset',
+                onPressed: () {
+                  context.read<HideAdCubit>().reset();
+                },
+              ),
+            ],
+          );
+        }));
   }
 }
 
