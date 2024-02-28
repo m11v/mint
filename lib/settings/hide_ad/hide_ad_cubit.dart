@@ -2,7 +2,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mintminter_mint/mint.dart';
 import 'package:mintminter_mint/settings/hide_ad/hide_ad_repository.dart';
 
-
 class HideAdCubit extends Cubit<bool> {
   HideAdCubit({
     required HideAdRepository hideAdRepository,
