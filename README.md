@@ -42,6 +42,10 @@ Common views & utils package for MintMinter app
  - MintHanView
  - MintHanPopupMenuButton
 
+## Settings
+ - HideAdRepository
+ - HideAdCubit
+
 ## Extensions
  - BuildContextTextTheme
  - BuildContextColor
