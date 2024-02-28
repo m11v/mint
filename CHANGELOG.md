@@ -114,3 +114,6 @@
 
 ## 2.5.1
 * Add `HideAdRepository` and refactor `HideAdCubit`
+
+## 2.5.2
+* Fix bug.
