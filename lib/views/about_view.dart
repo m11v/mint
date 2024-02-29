@@ -9,12 +9,18 @@ class AboutView extends StatelessWidget {
     required this.appName,
     required this.version,
     this.child,
+    this.onLogoTapped,
+    this.onAppNameTapped,
+    this.onVersionTapped,
   });
 
   final String logoAssetName;
   final String appName;
   final String version;
   final Widget? child;
+  final Function()? onAppNameTapped;
+  final Function()? onLogoTapped;
+  final Function()? onVersionTapped;
 
   @override
   Widget build(BuildContext context) {
@@ -22,25 +28,34 @@ class AboutView extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Image.asset(
-          logoAssetName,
-          height: 100,
+        InkWell(
+          onTap: onLogoTapped,
+          child: Image.asset(
+            logoAssetName,
+            height: 100,
+          ),
         ),
         const SizedBox(
           height: 10,
         ),
-        Text(
-          appName,
-          style: context.textTheme.titleLarge
-              ?.copyWith(color: context.primaryColor),
+        InkWell(
+          onTap: onAppNameTapped,
+          child: Text(
+            appName,
+            style: context.textTheme.titleLarge
+                ?.copyWith(color: context.primaryColor),
+          ),
         ),
         const SizedBox(
           height: 10,
         ),
-        Text(
-          version,
-          style: context.textTheme.titleMedium
-              ?.copyWith(color: context.primaryColor),
+        InkWell(
+          onTap: onVersionTapped,
+          child: Text(
+            version,
+            style: context.textTheme.titleMedium
+                ?.copyWith(color: context.primaryColor),
+          ),
         ),
         const SizedBox(
           height: 10,

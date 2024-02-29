@@ -116,4 +116,7 @@
 * Add `HideAdRepository` and refactor `HideAdCubit`
 
 ## 2.5.2
-* Fix bug.
+* Fix bug
+
+## 2.5.3
+* Add tap actions for `AboutView`

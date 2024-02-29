@@ -178,11 +178,20 @@ class _TestAboutView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const AboutView(
+    return AboutView(
       logoAssetName: 'assets/images/mintminter.png',
       appName: 'Example App',
       version: 'version',
-      child: Column(
+      onAppNameTapped: () {
+        debugPrint('onAppNameTapped');
+      },
+      onLogoTapped: () {
+        debugPrint('onLogoTapped');
+      },
+      onVersionTapped: () {
+        debugPrint('onVersionTapped');
+      },
+      child: const Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
