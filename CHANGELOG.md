@@ -120,3 +120,6 @@
 
 ## 2.5.3
 * Add tap actions for `AboutView`
+
+## 2.5.4
+* Add parameter in `UpgradeBloc` to disable the upgrade checking

@@ -31,6 +31,7 @@ class HomePage extends StatelessWidget {
           BlocProvider<UpgradeBloc>(
             create: (context) => UpgradeBloc(
               appAttributesRepository: context.read<AppAttributesRepository>(),
+              enableCheck: true,
             )..add(const UpgradeEventChecked(
                 versionCode: 9,
                 pageUrl:
