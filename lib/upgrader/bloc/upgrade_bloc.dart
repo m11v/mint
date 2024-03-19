@@ -11,15 +11,21 @@ part 'upgrade_state.dart';
 class UpgradeBloc extends Bloc<UpgradeEvent, UpgradeState> {
   UpgradeBloc({
     required AppAttributesRepository appAttributesRepository,
+    required this.enableCheck,
   })  : _appAttributesRepository = appAttributesRepository,
         super(UpgradeState.initial) {
     on<UpgradeEventChecked>(_onUpgradeEventChecked);
   }
 
   final AppAttributesRepository _appAttributesRepository;
+  final bool enableCheck;
 
   Future<void> _onUpgradeEventChecked(
       UpgradeEventChecked event, Emitter emit) async {
+    if (!enableCheck) {
+      return;
+    }
+
     final market = event.market ?? defaultAppMarket;
 
     final localAppAttributes = _appAttributesRepository.getLocalAppAttributes();
