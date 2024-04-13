@@ -13,12 +13,17 @@ void main() {
 
     tearDownAll(() async {
       HiveBoxProvider.dispose();
-      await File('$boxName.hive').delete();
-      await File('$boxName.lock').delete();
-      await File('$boxNameA.hive').delete();
-      await File('$boxNameA.lock').delete();
-      await File('$boxNameB.hive').delete();
-      await File('$boxNameB.lock').delete();
+
+      for (File file in [
+        File('$boxName.hive'),
+        File('$boxName.lock'),
+        File('$boxNameA.hive'),
+        File('$boxNameA.lock'),
+        File('$boxNameB.hive'),
+        File('$boxNameB.lock')
+      ]) {
+        if (await file.exists()) file.delete();
+      }
     });
 
     test('Throw exception when get HiveBoxProvider before create one', () {
