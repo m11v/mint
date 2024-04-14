@@ -124,5 +124,5 @@
 ## 2.5.4
 * Add parameter in `UpgradeBloc` to disable the upgrade checking
 
-## 2.5.4
+## 2.5.5
 * Make `HiveBoxProvider` supports both Flutter app or dart program
