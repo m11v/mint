@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dartx/dartx.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -11,8 +13,13 @@ class HiveBoxProvider extends KeyValueStorageProvider<String, dynamic> {
 
   static Future<HiveBoxProvider> createAndInit({
     required String boxName,
+    isFlutter = true,
   }) async {
-    await Hive.initFlutter();
+    if (isFlutter) {
+      await Hive.initFlutter();
+    } else {
+      Hive.init(Directory.current.path);
+    }
 
     if (_cache.containsKey(boxName)) {
       throw HiveBoxProviderHasBeenCreatedError(boxName);
