@@ -126,3 +126,6 @@
 
 ## 2.5.5
 * Make `HiveBoxProvider` supports both Flutter app or dart program
+
+## 2.5.6
+* Fix the type of `isFlutter` in  `HiveBoxProvider.createAndInit`
