@@ -13,7 +13,7 @@ class HiveBoxProvider extends KeyValueStorageProvider<String, dynamic> {
 
   static Future<HiveBoxProvider> createAndInit({
     required String boxName,
-    isFlutter = true,
+    bool isFlutter = true,
   }) async {
     if (isFlutter) {
       await Hive.initFlutter();
