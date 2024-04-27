@@ -129,3 +129,6 @@
 
 ## 2.5.6
 * Fix the type of `isFlutter` in  `HiveBoxProvider.createAndInit`
+
+## 2.6.0
+* Add `MintListTile`
