@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mintminter_mint/han/mint_han_popup_menu_button.dart';
 import 'package:mintminter_mint/mint.dart';
+import 'package:mintminter_mint/views/mint_list_tile.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -168,6 +169,13 @@ class _HomePageContentView extends StatelessWidget {
             height: 20,
           ),
           const _TestCounterView(),
+          const SizedBox(
+            height: 20,
+          ),
+          const _TestMintListTileView(),
+          const SizedBox(
+            height: 50,
+          ),
         ],
       ),
     );
@@ -390,6 +398,23 @@ class _TestCounterView extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class _TestMintListTileView extends StatelessWidget {
+  const _TestMintListTileView();
+
+  @override
+  Widget build(BuildContext context) {
+    return MintListTile(
+      leadingIconData: Icons.sunny,
+      title: 'Title ' * 50,
+      description: 'Description ' * 50,
+      tailingIconData: Icons.chevron_right,
+      onTap: () {
+        debugPrint('onTap: MintListTile');
+      },
     );
   }
 }
