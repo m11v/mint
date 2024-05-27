@@ -50,3 +50,4 @@ Common views & utils package for MintMinter app
 ## Extensions
  - BuildContextTextTheme
  - BuildContextColor
+ - BuildContextMediaQuery

@@ -413,7 +413,7 @@ class _TestMintListTileView extends StatelessWidget {
       description: 'Description ' * 50,
       tailingIconData: Icons.chevron_right,
       onTap: () {
-        debugPrint('onTap: MintListTile');
+        debugPrint('onTap: MintListTile --> ${context.screenWidth}');
       },
     );
   }

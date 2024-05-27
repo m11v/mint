@@ -25,3 +25,18 @@ extension BuildContextColor on BuildContext {
 
   Color get disabledColor => Theme.of(this).disabledColor;
 }
+
+extension BuildContextMediaQuery on BuildContext {
+  MediaQueryData get mediaQuery => MediaQuery.of(this);
+
+  /// The with of the screen in logical pixels
+  double get screenWidth => mediaQuery.size.width;
+
+  /// The height of the screen in logical pixels
+  double get screenHeight => mediaQuery.size.height;
+
+  Orientation get orientation => mediaQuery.orientation;
+
+  /// Whether in portrait or not.
+  bool get isPortrait => orientation == Orientation.portrait;
+}

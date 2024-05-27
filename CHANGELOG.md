@@ -132,3 +132,6 @@
 
 ## 2.6.0
 * Add `MintListTile`
+
+## 2.7.0
+* Add extensions on `BuildContext`
