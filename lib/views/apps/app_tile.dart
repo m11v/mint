@@ -42,7 +42,7 @@ class AppTile extends StatelessWidget {
           : null,
       trailing: Icon(
         Icons.open_in_new,
-        color: context.primaryColor.withOpacity(0.7),
+        color: context.primaryColor.withAlpha(200),
       ),
       onTap: () {
         launchInBrowser(appUrl);
