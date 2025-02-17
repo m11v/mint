@@ -135,3 +135,6 @@
 
 ## 2.7.0
 * Add extensions on `BuildContext`
+
+## 2.7.1
+* Upgrade dependencies

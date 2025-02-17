@@ -28,3 +28,5 @@ migrate_working_dir/
 build/
 .flutter-plugins
 .flutter-plugins-dependencies
+
+/android/app/.cxx
