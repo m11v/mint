@@ -1,4 +1,4 @@
-library mintminter_mint;
+library ;
 
 export 'assets/assets.dart';
 export 'content_provider/content_provider.dart';

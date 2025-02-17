@@ -30,7 +30,7 @@ class MintButton extends StatelessWidget {
         child: Text(
           text,
           style: TextStyle(
-              color: isEnabled ? Colors.white : Colors.white.withOpacity(0.7),
+              color: isEnabled ? Colors.white : Colors.white.withAlpha(200),
               fontSize: 18,
               fontWeight: FontWeight.bold),
         ));
